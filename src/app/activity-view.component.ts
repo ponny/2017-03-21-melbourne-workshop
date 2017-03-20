@@ -32,7 +32,7 @@ export class ActivityViewComponent {
     this.activities = activities.startWith(JSON.parse(localStorage['activityCache'] || null));
 
     this.activity = route.params.switchMap(params => 
-      this.activities.map(list => list.find(item => item.title = params['title']))
+      this.activities.map(list => list.find(item => item.title == params['title']))
     );
   }
 }
